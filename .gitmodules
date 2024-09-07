@@ -1,3 +1,15 @@
-[submodule "codeql-queries/vendor/tree-sitter-ql"]
-	path = codeql-queries/vendor/tree-sitter-ql
-	url = https://github.com/tree-sitter/tree-sitter
+[submodule "code-scanning/SecurityExploits/polkit/authentication_bypass_CVE-2021-3560/DBusParse"]
+	path = code-scanning/SecurityExploits/polkit/authentication_bypass_CVE-2021-3560/DBusParse
+	url = https://github.com/kevinbackhouse/DBusParse.git
+[submodule "code-scanning/SecurityExploits/Ubuntu/GHSL-2021-1011-accountsservice/DBusParse"]
+	path = code-scanning/SecurityExploits/Ubuntu/accountsservice_CVE-2021-3939/DBusParse
+	url = https://github.com/kevinbackhouse/DBusParse.git
+[submodule "code-scanning/SecurityExploits/Ubuntu/GHSL-2021-1011-accountsservice/EPollLoop"]
+	path = code-scanning/SecurityExploits/Ubuntu/accountsservice_CVE-2021-3939/EPollLoop
+	url = https://github.com/kevinbackhouse/EPollLoop.git
+[submodule "code-scanning/SecurityExploits/Ubuntu/GHSL-2021-1011-accountsservice/EPollLoopDBusHandler"]
+	path = code-scanning/SecurityExploits/Ubuntu/accountsservice_CVE-2021-3939/EPollLoopDBusHandler
+	url = https://github.com/kevinbackhouse/EPollLoopDBusHandler.git
+[submodule "code-scanning/SecurityExploits/polkit/file_descriptor_exhaustion_CVE-2021-4115/DBusParse"]
+	path = code-scanning/SecurityExploits/polkit/file_descriptor_exhaustion_CVE-2021-4115/DBusParse
+	url = https://github.com/kevinbackhouse/DBusParse
