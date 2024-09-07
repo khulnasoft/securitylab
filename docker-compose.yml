@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  secgate-core:
+    image: secgate-core:latest
+    environment:
+      - NODE_ENV=production
+      - SERVER_BLUE_TEAM=false
+      - AUTHENTICATION_PASSWORD=8888
+    ports:
+      - 4000:4000
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: secgate-core
+  secgate-artifacts:
+    image: secgate-builder:latest
+    environment:
+      - NODE_ENV=production
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: secgate-builder

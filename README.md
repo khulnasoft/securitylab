@@ -1,75 +1,228 @@
-# Payloads All The Things 
+# **SecGate**: Red Team C2 Log Visualization
+---
 
-A list of useful payloads and bypasses for Web Application Security.
-Feel free to improve with your payloads and techniques !    
-I :heart: pull requests :)
+## ⚠️ This Repo Currently in Maintenance Mode ⚠️
 
-You can also contribute with a :beers: IRL, or using the sponsor button 
+This GitHub repository is no longer under active development. We'll review community issues and pull requests for bug fixes, but won't consider any new feature additions.
 
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/khulnasoft)](https://github.com/sponsors/khulnasoft)
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Payloads%20All%20The%20Things,%20a%20list%20of%20useful%20payloads%20and%20bypasses%20for%20Web%20Application%20Security%20-%20by%20@pentest_swissky&url=https://github.com/khulnasoft/securitylab/)
-
-An alternative display version is available at [securitylab](https://khulnasoft.github.io/securitylab/).
+---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/khulnasoft/securitylab/master/.github/banner.png">
+<img alt="SecGate Screenshot" src="https://github.com/khulnasoft/securitylab/blob/develop/docs/images/SecGate-Hero-Screenshot.png?raw=true" width="100%"/>
 </p>
 
+SecGate is an open-source analytic tool developed by [CISA](https://www.cisa.gov/) and [DOE](https://www.energy.gov/)’s [Pacific Northwest National Laboratory](https://www.pnnl.gov/) to assist [Red Teams](https://en.wikipedia.org/wiki/Red_team) with visualizing and reporting command and control activities. This tool allows an operator to assess and display complex data, evaluate mitigation strategies, and enable effective decision making in response to a Red Team assessment. The tool parses logs, such as those from [Cobalt Strike](https://www.cobaltstrike.com/), and presents the data in an easily digestible format. The users can then tag and add comments to activities displayed within the tool. The operators can use the SecGate’s presentation mode to present findings and workflow to stakeholders.
 
-📖 Documentation
------
-Every section contains the following files, you can use the `_template_vuln` folder to create a new chapter:
+SecGate can assist an operator to efficiently:
 
-- README.md - vulnerability description and how to exploit it, including several payloads
-- Intruder - a set of files to give to Burp Intruder
-- Images - pictures for the README.md
-- Files - some files referenced in the README.md
+- Replay and demonstrate Red Team’s assessment activities as they occurred rather than manually pouring through thousands of lines of log text.
+- Display and evaluate complex assessment data to enable effective decision making.
+- Gain a clearer understanding of the attack path taken and the hosts compromised during a Red Team assessment or penetration test.
 
-You might also like the `Methodology and Resources` folder :
-
-- [Methodology and Resources](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/)
-  - [Active Directory Attack.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md)
-  - [Cloud - AWS Pentest.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md)
-  - [Cloud - Azure Pentest.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Cloud%20-%20Azure%20Pentest.md)
-  - [Cobalt Strike - Cheatsheet.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Cobalt%20Strike%20-%20Cheatsheet.md)
-  - [Linux - Evasion.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Linux%20-%20Evasion.md)
-  - [Linux - Persistence.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Linux%20-%20Persistence.md)
-  - [Linux - Privilege Escalation.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
-  - [Metasploit - Cheatsheet.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Metasploit%20-%20Cheatsheet.md)  
-  - [Methodology and enumeration.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Methodology%20and%20enumeration.md)
-  - [Network Pivoting Techniques.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Network%20Pivoting%20Techniques.md)
-  - [Network Discovery.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Network%20Discovery.md)
-  - [Reverse Shell Cheatsheet.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
-  - [Subdomains Enumeration.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Subdomains%20Enumeration.md)
-  - [Windows - AMSI Bypass.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20AMSI%20Bypass.md)
-  - [Windows - DPAPI.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20DPAPI.md)
-  - [Windows - Download and Execute.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20Download%20and%20Execute.md)
-  - [Windows - Mimikatz.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20Mimikatz.md)
-  - [Windows - Persistence.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20Persistence.md)
-  - [Windows - Privilege Escalation.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
-  - [Windows - Using credentials.md](https://github.com/khulnasoft/securitylab/blob/master/Methodology%20and%20Resources/Windows%20-%20Using%20credentials.md)
+| **Red Team** | **Blue Team** |
+|:------------:|:-------------:|
+| [![Red Team](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/rsybgk&style=flat&logo=cypress)](https://cloud.cypress.io/projects/rsybgk/runs) | [![Blue Team](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/46ahz3&style=flat&logo=cypress)](https://cloud.cypress.io/projects/46ahz3/runs) |
 
 
-You want more ? Check the [Books](https://github.com/khulnasoft/securitylab/blob/master/_LEARNING_AND_SOCIALS/BOOKS.md) and [Youtube videos](https://github.com/khulnasoft/securitylab/blob/master/_LEARNING_AND_SOCIALS/YOUTUBE.md) selections.
+## Quick start
 
+1. **Download** the latest SecGate binaries for your OS[\*](#platform-support) from the [Releases](https://github.com/khulnasoft/securitylab/releases) page.
+2. **Pick a mode** and **Run the server**
+   - [ **Red Team mode**](#red-team) enables the full feature set: upload C2 logs, explore data, and create presentations. _You must provide a password to run in Red Team mode._ To start the server in Red Team mode, run the following in a terminal.
+		```
+    	./SecGate --redTeam --password <your_password>
+		```
+   - [**Blue Team mode**](#blue-team) (default) enables a simplified, read-only UI for reviewing campaigns exported by a Red Team. To start the server in Blue Team mode, run the following in a terminal.
+		```
+    	./SecGate   # Or simplify double-click the "SecGate" executable 
+		```
+3. **Use the web app** in a browser at http://127.0.0.1:4000. The SecGate binary runs as a server in a terminal window and will automatically open the web app UI your default browser. You must close the terminal window to quit the SecGate server.
+4. Try importing the [gt.secgate](https://github.com/khulnasoft/securitylab/raw/develop/applications/secgate-e2e/src/fixtures/gt.secgate) example dataset to get started. Or try a different [example dataset](#example-datasets).
 
-👨‍💻 Contributions
------
-Be sure to read [CONTRIBUTING.md](https://github.com/khulnasoft/securitylab/blob/master/CONTRIBUTING.md)
+_**MacOS Issue** - When running SecGate for the first time, you may get a "not verified" error. You must go to "System Preferences" > "Security & Privacy" > "General" and click "Open Anyway." More info on the [Apple support page](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/)._
 
-<p align="center">
-<a href="https://github.com/khulnasoft/securitylab/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=khulnasoft/securitylab&max=36">
-</a>
-</p>
+### Follow the [User Guide](https://github.com/khulnasoft/securitylab/blob/develop/docs/UserGuide.md) to learn about SecGate's feature set.
 
-Thanks again for your contribution! :heart:
+---
 
+## Red Team & Blue Team Modes
 
-🧙‍♂️ Sponsors
------
+SecGate has two modes that cover two stages of the Red Teaming process. [Red Team mode](#red-team) allows importing C2 data, editing imported data, and making comments and presentations. After curating and annotating campaign data, Red Teams can export their campaign as a standalone `.secgate` file and [hand it off to a Blue Team](#blue-team-presentation-handoff) for reporting and remediation. [Blue Team mode](#blue-team) runs SecGate in a simplified read-only mode for viewing curated data exported by a Red Team.
 
-This project is proudly sponsored by these companies: 
+_Note: Both Red and Blue Team modes can be started from the same SecGate application binary._
 
-[<img src="https://avatars.githubusercontent.com/u/48131541?s=40&v=4">](https://www.vaadata.com/)
-[<img src="https://avatars.githubusercontent.com/u/50994705?s=40&v=4">](https://github.com/projectdiscovery)
+### Red Team
+
+The downloaded binary comes in two parts:
+
+- The `SecGate` application binary
+- The `parsers` folder containing parser binaries (e.g. `cobalt-strike-parser` Cobalt Strike log parser binary)
+
+There are three options to run SecGate in Red Team mode:
+
+1. Run the downloaded binary, passing in the `--redTeam` and password options:
+   ```
+   ./SecGate --redTeam --password <your_password>
+   ```
+2. Clone, install, and run the project directly (covered in the [Local Build](#local-build) section).
+3. Docker Compose
+   1. Clone the repo
+   2. Update the environment variables in `docker-compose.yml`.
+   3. Run:
+      ```
+      docker-compose -f docker-compose.yml up -d secgate-core
+      ```
+
+### Blue Team
+
+The Blue Team mode is a simplified, read-only UI for displaying data that has been curated, annotated, and exported by a Red Team. This mode runs by default to make startup more simple for the Blue Team.
+
+The Blue Team version can be run by double-clicking the 'SecGate' application binary. SecGate runs at http://127.0.0.1:4000 (by default) and will automatically open your default browser.
+
+### Blue Team Presentation Handoff
+
+If a `campaigns` folder is located in the same directory as the `SecGate` application, SecGate will attempt to import any `.secgate` campaign files within. Campaign files can be exported in the Red Team mode.
+
+To prepare a version for the Blue Team, follow these two steps:
+
+1. Copy the `SecGate` application binary to an empty folder.
+2. Create a `campaigns` folder in the same directory and place the `.secgate` campaign files you want to send inside.
+
+```
+Folder/
+	SecGate
+	campaigns/
+		Campaign-01.secgate
+		Campaign-02.secgate
+```
+
+`.secgate` files can also be uploaded in Blue Team mode via the "+ Add Campaign" dialog.
+
+## Example Datasets
+There are example datasets in this repo available for download. These are located in the [./applications/secgate-e2e/src/fixtures](https://github.com/khulnasoft/securitylab/tree/develop/applications/secgate-e2e/src/fixtures) folder. 
+- **gtdataset** - available as [gt.secgate](https://github.com/khulnasoft/securitylab/raw/develop/applications/secgate-e2e/src/fixtures/gt.secgate) and as [Cobalt Strike Logs](https://github.com/khulnasoft/securitylab/tree/develop/applications/secgate-e2e/src/fixtures/gtdataset) 
+- **smalldata** - available as [smalldata.secgate](https://github.com/khulnasoft/securitylab/raw/develop/applications/secgate-e2e/src/fixtures/smalldata.secgate) and as [Cobalt Strike Logs](https://github.com/khulnasoft/securitylab/tree/develop/applications/secgate-e2e/src/fixtures/smalldata) 
+- **testdata** - available as [Cobalt Strike Logs](https://github.com/khulnasoft/securitylab/tree/develop/applications/secgate-e2e/src/fixtures/testdata)
+
+You may want to use a tool like [download-directory.github.io](https://download-directory.github.io/) to download just one folder of a github repo
+
+<!--
+## SecGate Server Settings
+SecGate runs as a server and can be setup to serve the UI on a network..
+
+***{instructions}***
+-->
+
+## SecGate Server Parameters
+
+Type `./Redeye -h` to view the options
+
+```
+-d, --developmentMode [boolean]  put the database and server in development mode
+-r, --redTeam [boolean]          run the server in red team mode
+--port [number]                  the port the server should be exposed at
+-p, --password [string]          the password for user authentication
+--parsers [string...]            A list of parsers to use or a flag to use all parsers in the parsers folder
+-t, --childProcesses [number]    max # of child processes the parser can use
+-h, --help                       display help for command
+```
+
+you can also configure the server parameters in a `config.json` file that sits next to the `SecGate` binary
+```json5
+
+{
+	"password": "937038570",
+	"redTeam": true,
+	"parsers": ["cobalt-strike-parser", "brute-ratel-parser"] // or true/false
+}
+```
+
+## Local Build
+
+### Required Packages
+
+- [Node.js](https://nodejs.org/en/) >= v16
+- Install yarn: `npm install -g yarn`
+- Run: `yarn install` // Installs all packages
+- Run either:
+  1.  `yarn release:all` to build a binary for Linux, macOS, and Windows
+  2.  `yarn release:(mac|windows|linux)` .
+- platform options:
+  - mac
+  - windows
+  - linux
+
+## Development
+
+### Setup
+
+Install [Node.js](https://nodejs.org/en/) >= v16
+Install [yarn](https://yarnpkg.com/) globally via [npm](https://www.npmjs.com/package/yarn)
+
+```
+npm install -g yarn
+```
+
+Install package dependencies
+
+```
+yarn install
+```
+
+#### Quick Start Development
+
+Runs the project in development mode
+
+```sh
+yarn start
+```
+
+#### Advanced Development
+
+It is recommended to run the server and client in two separate terminals
+
+```sh
+yarn start:client
+```
+
+...in another terminal
+
+```sh
+yarn start:server
+```
+
+#### Build
+
+to build a binary for Linux, macOS, and Windows
+
+```shell
+yarn release:all
+```
+
+to build for a specific platform, replace `all` with the platform name
+
+```shell
+yarn release:(mac|windows|linux)
+```
+
+## Platform support
+
+- Linux
+  - Ubuntu 18 and newer
+  - Kali Linux 2020.1 and newer
+  - Others may be supported but are untested
+- macOS
+  - El Capitan and newer
+- Windows
+  - Windows 7 and newer
+  - ARM support is experimental
+
+---
+
+<div align="center">
+
+<img alt="CISA Logo" src="https://github.com/khulnasoft/securitylab/blob/develop/docs/images/CISA Logo.png?raw=true" height="35%" width="35%"/>
+
+<img alt="SecGate Logo" src="https://raw.githubusercontent.com/khulnasoft/securitylab/2e0279ad4bdc798eb2ee6aa018bcd6ad66079d0e/applications/client/public/logos/Logo-Dark.svg" height="35%" width="35%"/>
+
+</div>

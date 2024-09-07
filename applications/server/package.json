@@ -1,0 +1,24 @@
+{
+	"name": "@secgate/server",
+	"version": "0.9.0",
+	"bin": "./dist/index.js",
+	"pkg": {
+		"scripts": [
+			"./dist/machines/anonymization/anonymization.worker.js"
+		],
+		"assets": [
+			"../client/dist/**/*",
+			"../../node_modules/better-sqlite3/**/*.*",
+			"../../../node_modules/better-sqlite3/**/*.*"
+		],
+		"compress": "GZip"
+	},
+	"dependencies": {
+		"@secgate/brute-ratel-parser": "workspace:*",
+		"@secgate/cobalt-strike-parser": "workspace:*",
+		"@secgate/migrations": "workspace:*",
+		"@secgate/models": "workspace:*",
+		"@secgate/parser-core": "workspace:*",
+		"@secgate/sliver-parser": "workspace:*"
+	}
+}

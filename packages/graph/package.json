@@ -1,0 +1,17 @@
+{
+	"name": "@secgate/graph",
+	"version": "0.2.0",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/secgate-graph.umd.js",
+	"module": "./dist/secgate-graph.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/secgate-graph.js",
+			"require": "./dist/secgate-graph.umd.js"
+		}
+	}
+}

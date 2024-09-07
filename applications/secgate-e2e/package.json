@@ -1,0 +1,8 @@
+{
+	"name": "@secgate/e2e",
+	"version": "1.0.0",
+	"dependencies": {
+		"@secgate/client": "workspace:*",
+		"@secgate/server": "workspace:*"
+	}
+}

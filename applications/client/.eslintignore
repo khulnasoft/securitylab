@@ -1,0 +1,2 @@
+src/**/index.ts
+src/views/Campaigns/Upload/file-worker-js.js

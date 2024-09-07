@@ -1,0 +1,31 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": ["esnext"],
+		"moduleResolution": "node",
+		"module": "CommonJS",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"composite": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"declaration": true,
+		"noFallthroughCasesInSwitch": true,
+		"rootDir": "src",
+		"outDir": "dist",
+		"paths": {
+			"@secgate/models": ["../models/src/index.ts"],
+			"@secgate/models/*": ["../models/src/*"]
+		}
+	},
+	"files": [],
+	"include": ["src"],
+	"references": [
+		{
+			"path": "../models"
+		}
+	]
+}
