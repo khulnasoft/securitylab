@@ -1,0 +1,3 @@
+[submodule "codeql-queries/vendor/tree-sitter-ql"]
+	path = codeql-queries/vendor/tree-sitter-ql
+	url = https://github.com/tree-sitter/tree-sitter
