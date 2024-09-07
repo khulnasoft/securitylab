@@ -1,0 +1,19 @@
+{
+	"name": "@secgate/sliver-parser",
+	"version": "0.0.1-alpha.0",
+	"bin": "./dist/index.js",
+	"pkg": {
+		"assets": [
+			"../../node_modules/better-sqlite3/**/*.*",
+			"../../../node_modules/better-sqlite3/**/*.*"
+		],
+		"compress": "GZip"
+	},
+	"files": [
+		"dist"
+	],
+	"dependencies": {
+		"@secgate/models": "workspace:*",
+		"@secgate/parser-core": "workspace:*"
+	}
+}

@@ -1,0 +1,13 @@
+tasks:
+  test:
+    deps:
+      - ~:test-jest
+  build:
+    deps:
+      - ~:build-node
+  start-dev:
+    deps:
+      - ~:start-node
+    local: true
+    options:
+      runInCI: false

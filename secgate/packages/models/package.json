@@ -1,0 +1,6 @@
+{
+	"name": "@secgate/models",
+	"version": "0.9.0",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts"
+}

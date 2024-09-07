@@ -1,0 +1,46 @@
+.DS_Store
+node_modules
+*.local
+dist
+build
+@secgate/darwin-x64
+packages/graph/testData
+applications/server/dev-databases
+applications/server/campaign
+.eslintcache
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+/.pnp
+.pnp.js
+
+coverage
+junit.xml
+
+.history
+.idea
+.vim
+.nova
+
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+test.sqlite*
+
+junit.*.xml
+release
+tmp
+# moon
+.moon/cache
+.moon/docker
+*.tsbuildinfo
+
+# generated types
+.astro/

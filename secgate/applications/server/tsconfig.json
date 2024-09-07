@@ -1,0 +1,59 @@
+{
+	"extends": "../../tsconfig.json",
+	"include": ["src", "types", "config.yaml"],
+	"compilerOptions": {
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"module": "CommonJS",
+		"target": "esnext",
+		"lib": ["esnext"],
+		"importHelpers": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"emitDecoratorMetadata": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"experimentalDecorators": true,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"composite": true,
+		"paths": {
+			"@secgate/brute-ratel-parser": ["../../parsers/brute-ratel-parser/src/index.ts"],
+			"@secgate/brute-ratel-parser/*": ["../../parsers/brute-ratel-parser/src/*"],
+			"@secgate/cobalt-strike-parser": ["../../parsers/cobalt-strike-parser/src/index.ts"],
+			"@secgate/cobalt-strike-parser/*": ["../../parsers/cobalt-strike-parser/src/*"],
+			"@secgate/migrations": ["../../packages/migrations/src/index.ts"],
+			"@secgate/migrations/*": ["../../packages/migrations/src/*"],
+			"@secgate/models": ["../../packages/models/src/index.ts"],
+			"@secgate/models/*": ["../../packages/models/src/*"],
+			"@secgate/parser-core": ["../../parsers/parser-core/src/index.ts"],
+			"@secgate/parser-core/*": ["../../parsers/parser-core/src/*"],
+			"@secgate/sliver-parser": ["../../parsers/sliver-parser/src/index.ts"],
+			"@secgate/sliver-parser/*": ["../../parsers/sliver-parser/src/*"]
+		}
+	},
+	"references": [
+		{
+			"path": "../../packages/migrations"
+		},
+		{
+			"path": "../../packages/models"
+		},
+		{
+			"path": "../../parsers/brute-ratel-parser"
+		},
+		{
+			"path": "../../parsers/cobalt-strike-parser"
+		},
+		{
+			"path": "../../parsers/parser-core"
+		},
+		{
+			"path": "../../parsers/sliver-parser"
+		}
+	]
+}
